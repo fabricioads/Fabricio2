@@ -1,0 +1,24 @@
+void myMethod() {
+    int int1 = 0;         // beginning of method block
+
+    if (condition) {
+        int int2 = 0;     // beginning of "if" block
+        ...
+    }
+}
+</blockquote>
+The one exception to the rule is indexes of for loops, which in Java can be declared in the for statement:
+
+for (int i = 0; i < maxLoops; i++) { ... }
+</blockquote>
+Avoid local declarations that hide declarations at higher levels. For example, do not declare the same variable name in an inner block:
+
+int count;
+...
+myMethod() {
+    if (condition) {
+        int count = 0;     // AVOID!
+        ...
+    }
+    ...
+}
